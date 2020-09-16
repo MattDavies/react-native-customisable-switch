@@ -36,6 +36,7 @@ export default class Switch extends Component {
     buttonTextOff: PropTypes.string,
     buttonTextColor: PropTypes.string,
     buttonTextSize: PropTypes.number,
+    buttonElevation: PropTypes.number,
   };
 
   static defaultProps = {
@@ -70,6 +71,7 @@ export default class Switch extends Component {
     buttonTextOff: null,
     buttonTextColor: "#FFFFFF",
     buttonTextSize: 14,
+    buttonElevation: 0,
   };
 
   constructor(props, context) {
@@ -149,6 +151,7 @@ export default class Switch extends Component {
       buttonTextOff,
       buttonTextColor,
       buttonTextSize,
+      buttonElevation,
     } = this.props;
 
     const backgroundColorValue = backgroundColor.interpolate({
@@ -222,6 +225,7 @@ export default class Switch extends Component {
               shadowRadius: shadowRadius,
               alignItems: "center",
               justifyContent: "center",
+              elevation: buttonElevation,
             }}
           >
             {(!!buttonTextOn || !!buttonTextOff) && (
